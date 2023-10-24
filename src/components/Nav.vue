@@ -5,7 +5,7 @@
   import { useRouter } from "vue-router";
   import { useUserStore } from "../stores/users";
   import { storeToRefs } from "pinia";
-  import instagram from "../assets/instagram_logo_white.png";
+  import instagram from "@/assets/Instagram_logo_white.png";
   import { supabase } from "../supabase";
 
   const userStore = useUserStore();
