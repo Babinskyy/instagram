@@ -69,7 +69,7 @@
             <img :src="instagram" alt="instagram-logo" />
           </RouterLink>
           <a-auto-complete
-            style="width: 200px"
+            style="width: 250px"
             placeholder="Search..."
             @select="onSelect"
             @search="onSearch"
@@ -121,7 +121,7 @@
     margin-right: 10px;
   }
   .left-content a img {
-    width: 103px;
+    width: 150px;
     margin-right: 10px;
     transform: translate(0, 2px);
   }

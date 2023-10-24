@@ -111,7 +111,7 @@
 </script>
 
 <template>
-  <a-card hoverable style="width: 240px" class="card">
+  <a-card hoverable style="width: 350px" class="card">
     <template #cover>
       <div v-show="!isImageLoaded" class="image-spinner">
         <a-spin />
