@@ -1,0 +1,5 @@
+@import "./base.css";
+
+.ant-image-preview-operations-wrapper {
+  display: none;
+}
