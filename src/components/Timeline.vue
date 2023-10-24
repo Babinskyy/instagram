@@ -4,6 +4,7 @@
   import LoginMessage from "./LoginMessage.vue";
   import { useUserStore } from "../stores/users";
   import { storeToRefs } from "pinia";
+  import RandomCards from "./RandomCards.vue";
   const userStore = useUserStore();
   const { user, loadingUser } = storeToRefs(userStore);
 </script>
@@ -12,7 +13,7 @@
   <Container>
     <div v-if="!loadingUser">
       <Cards v-if="user" />
-      <LoginMessage v-else />
+      <RandomCards v-else />
     </div>
     <div v-else class="timeline-spinner">
       <a-spin />

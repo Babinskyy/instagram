@@ -60,18 +60,16 @@
 
     const { data: notFollowedData } = await query;
     if (notFollowedData) {
-      const idSet = new Set(); // Create the Set outside the filter function
+      const idSet = new Set();
       const uniqueArray = notFollowedData.filter((post) => {
         if (!idSet.has(post.owner_id)) {
-          idSet.add(post.owner_id); // Add the owner_id to the Set
-          return true; // Include the object in the result
+          idSet.add(post.owner_id);
+          return true;
         }
-        return false; // Exclude duplicates
+        return false;
       });
       unfollowedPosts.value = uniqueArray.slice(0, 3);
     }
-
-    // if (notFollowedData) unfollowedPosts.value = notFollowedData;
   };
 
   watch(reachEnd, () => {

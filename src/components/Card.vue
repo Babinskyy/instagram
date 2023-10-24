@@ -20,7 +20,6 @@
   const likesAmount: Ref<number> = ref(0);
   const isImageLoaded = ref(false);
   const isEditing = ref(false);
-  const isLoading = ref(false);
   const captionEditValue: Ref<string> = ref(props.post.caption);
   const postCaption = ref(props.post.caption);
 
@@ -28,19 +27,21 @@
     router.push(`/profile/${user}`);
   };
   const like = async () => {
-    isLiked.value = true;
-    likesAmount.value++;
-    const userId = loggedInUser.value?.id;
-    const likes = props.post.likes || [];
+    if (loggedInUser) {
+      isLiked.value = true;
+      likesAmount.value++;
+      const userId = loggedInUser.value?.id;
+      const likes = props.post.likes || [];
 
-    const updatedLikes = [...likes, userId];
-    try {
-      await supabase
-        .from("posts")
-        .update({ likes: updatedLikes })
-        .eq("id", props.post.id);
-    } catch (err) {
-      console.error(err);
+      const updatedLikes = [...likes, userId];
+      try {
+        await supabase
+          .from("posts")
+          .update({ likes: updatedLikes })
+          .eq("id", props.post.id);
+      } catch (err) {
+        console.error(err);
+      }
     }
   };
   const unlike = async () => {
@@ -140,7 +141,11 @@
           </span>
 
           <span>
-            <HeartOutlined v-if="!isLiked" class="heart-icon" @click="like" />
+            <HeartOutlined
+              v-if="!isLiked"
+              :class="!loggedInUser ? 'not-logged heart-icon' : 'heart-icon'"
+              @click="like"
+            />
             <HeartFilled v-else class="heart-icon" style="color: red" @click="unlike" />
             {{ likesAmount ? likesAmount : "" }}
           </span>
@@ -194,6 +199,10 @@
   .heart-icon:hover {
     color: red;
     transform: scale(1.1);
+  }
+  .not-logged {
+    cursor: default;
+    pointer-events: none;
   }
   .spinner {
     height: 80vh;

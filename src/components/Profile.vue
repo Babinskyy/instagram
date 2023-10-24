@@ -131,7 +131,7 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    padding: 80px 0px 20px 0px;
+    padding: 90px 0px 20px 0px;
   }
   .spinner {
     display: flex;
