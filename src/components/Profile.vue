@@ -139,4 +139,10 @@
     justify-content: center;
     height: 85vh;
   }
+
+  @media screen and (max-width: 800px) {
+    .profile-container {
+      padding-top: 140px;
+    }
+  }
 </style>

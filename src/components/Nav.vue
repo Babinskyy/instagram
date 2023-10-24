@@ -69,7 +69,7 @@
             <img :src="instagram" alt="instagram-logo" />
           </RouterLink>
           <a-auto-complete
-            style="width: 250px"
+            class="autocomplete"
             placeholder="Search..."
             @select="onSelect"
             @search="onSearch"
@@ -99,7 +99,6 @@
   .nav {
     width: 100%;
     background-color: rgb(0, 17, 72);
-    /* line-height: 64px; */
     padding: 15px;
     position: fixed;
     z-index: 20;
@@ -125,8 +124,8 @@
     margin-right: 10px;
     transform: translate(0, 2px);
   }
-  .input {
-    transform: scale(0.85);
+  .autocomplete {
+    width: 250px;
   }
   .buttons-panel {
     display: flex;
@@ -138,5 +137,20 @@
   }
   .right-content button {
     margin-left: 10px;
+  }
+
+  @media screen and (max-width: 800px) {
+    .nav-container {
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+    }
+    .autocomplete {
+      width: 185px;
+    }
+    .buttons-panel {
+      margin-top: 10px;
+      width: 100%;
+    }
   }
 </style>

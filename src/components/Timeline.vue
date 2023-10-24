@@ -11,7 +11,7 @@
 
 <template>
   <Container>
-    <div v-if="!loadingUser">
+    <div v-if="!loadingUser" class="timeline-container">
       <Cards v-if="user" />
       <RandomCards v-else />
     </div>
@@ -26,12 +26,17 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    padding: 90px 0px 20px 0px;
+    padding: 45px 0px 20px 0px;
   }
   .timeline-spinner {
     display: flex;
     align-items: center;
     justify-content: center;
     height: 90vh;
+  }
+  @media screen and (max-width: 800px) {
+    .timeline-container {
+      padding-top: 65px;
+    }
   }
 </style>

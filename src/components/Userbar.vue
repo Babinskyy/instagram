@@ -43,7 +43,7 @@
 <template>
   <div class="userbar-container" v-if="props.user">
     <div class="top-content">
-      <a-typography-title :level="2" class="title">
+      <a-typography-title :level="2" class="user-info">
         {{ props.user.username }}
       </a-typography-title>
       <div v-if="user">
@@ -62,26 +62,28 @@
     </div>
 
     <div class="bottom-content">
-      <a-typography-title :level="5" class="title">
+      <a-typography-title :level="5" class="user-info post-info">
         {{ props.userInfo.posts }} posts
       </a-typography-title>
-      <a-typography-title :level="5" class="title">
+      <a-typography-title :level="5" class="user-info post-info">
         {{ props.userInfo.followers }} followers
       </a-typography-title>
-      <a-typography-title :level="5" class="title">
+      <a-typography-title :level="5" class="user-info post-info">
         {{ props.userInfo.following }} following
       </a-typography-title>
     </div>
   </div>
   <div v-else class="userbar-container">
     <div class="top-content">
-      <a-typography-title :level="2" class="title">User not found.</a-typography-title>
+      <a-typography-title :level="2" class="user-info">
+        User not found.
+      </a-typography-title>
     </div>
   </div>
 </template>
 
 <style scoped>
-  .title {
+  .user-info {
     color: var(--color-text);
   }
   .userbar-container {
@@ -102,5 +104,16 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
+  }
+  @media screen and (max-width: 800px) {
+    .user-info {
+      font-size: 22px;
+    }
+    .post-info {
+      font-size: 18px;
+    }
+    .bottom-content {
+      margin-top: 15px;
+    }
   }
 </style>
