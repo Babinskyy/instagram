@@ -17,12 +17,8 @@
   let filteredOptions: Ref<{ value: string; text: string }[]> = ref([]);
 
   const onSelect = (option: string) => {
-    if (user.value) {
-      if (option) {
-        router.push(`/profile/${option}`);
-      }
-    } else {
-      router.push(`/`);
+    if (option) {
+      router.push(`/profile/${option}`);
     }
   };
 
