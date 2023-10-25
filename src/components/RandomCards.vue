@@ -39,10 +39,10 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    padding: 40px 0px 20px 0px;
+    /* padding: 40px 0px 20px 0px; */
   }
   h1 {
-    padding: 20px 0px 40px 0px;
+    padding: 30px 0px 30px 0px;
     text-align: center;
   }
 </style>

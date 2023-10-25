@@ -96,7 +96,9 @@
     width: 100%;
     background-color: rgb(0, 17, 72);
     padding: 15px;
-    position: fixed;
+    /* position: fixed; */
+    position: sticky;
+    top: 0;
     z-index: 20;
   }
   .nav-container {

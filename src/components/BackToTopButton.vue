@@ -8,9 +8,9 @@
 
 <style scoped>
   .icon {
-    position: fixed;
-    bottom: 30px;
-    right: 30px;
+    position: sticky;
+    bottom: 20px;
+    left: 20px;
     font-size: 30px;
     transition: 0.2s;
   }

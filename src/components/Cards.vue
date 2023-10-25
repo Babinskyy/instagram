@@ -3,7 +3,7 @@
   import Card from "./Card.vue";
   import { useUserStore } from "../stores/users";
   import { storeToRefs } from "pinia";
-  import { onMounted, ref, watch, type Ref } from "vue";
+  import { ref, watch, type Ref } from "vue";
   import type { Post } from "../types/types";
   import Observer from "./Observer.vue";
 

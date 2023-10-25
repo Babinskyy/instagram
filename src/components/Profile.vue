@@ -131,18 +131,12 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    padding: 90px 0px 20px 0px;
+    padding-top: 20px;
   }
   .spinner {
     display: flex;
     align-items: center;
     justify-content: center;
     height: 85vh;
-  }
-
-  @media screen and (max-width: 800px) {
-    .profile-container {
-      padding-top: 140px;
-    }
   }
 </style>

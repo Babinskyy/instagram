@@ -52,7 +52,7 @@
 <template>
   <div>
     <a-button type="primary" @click="showModal" class="button">{{ title }}</a-button>
-    <a-modal v-model:open="open" :title="title" @ok="handleOk">
+    <a-modal v-model:open="open" :title="title" @ok="handleOk" :centered="false">
       <template #footer>
         <a-button key="back" @click="handleCancel">Cancel</a-button>
         <a-button key="submit" type="primary" :loading="loading" @click="handleOk">
